@@ -1,0 +1,34 @@
+{
+  "name": "key-accessor",
+  "version": "1.0.0",
+  "description": "access keys of object safely",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc | dts-generator --name key-accessor --project ./ --out ./lib/index.d.ts",
+    "test": "mocha ./test/index.js --compilers js:babel-core/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuhongda/keyAccessor.git"
+  },
+  "keywords": [
+    "accessor",
+    "ts",
+    "key"
+  ],
+  "author": "yu.hongda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuhongda/keyAccessor/issues"
+  },
+  "homepage": "https://github.com/yuhongda/keyAccessor#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "dts-generator": "^2.1.0",
+    "mocha": "^5.2.0",
+    "typescript": "^2.9.2"
+  }
+}
