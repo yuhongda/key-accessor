@@ -15,6 +15,7 @@ Usage
 -----
 
 ```javascript
+import keyAccessor from 'key-accessor'
 
 const music = {
   rock: {
@@ -25,9 +26,11 @@ const music = {
   }
 }
 
-music.rock.band() // output: G N' R
-music.pop.band() // output: undefined
-music.classical.band() // output: undefined
+const obj = keyAccessor(music)
+
+obj.rock.band() // output: G N' R
+obj.pop.band() // output: undefined
+obj.classical.band() // output: undefined
 
 ```
 
