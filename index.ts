@@ -7,16 +7,20 @@ interface IProxy<T> {
   new (object: T, handler: IHandler<T>): T
 }
 
-const emptyObject: any = {}
+const nonObject: any = new Proxy(() => {}, {
+  get: () => nonObject,
+  apply: () => undefined
+})
+
 
 export default function keyAccessor<T>(object: T): T {
-  return new (<IProxy<T>>Proxy)(object, {
+  return new (<IProxy<T>>Proxy)(<any>(() => {}), {
     apply: () => object,
-    get: (object, key) => {
+    get: (target, key) => {
       if(object !== null && Object.prototype.hasOwnProperty.call(object, key)) {
         return keyAccessor(object[key])
       }
-      return emptyObject
+      return nonObject
     }
   })
 }
