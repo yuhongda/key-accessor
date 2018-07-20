@@ -34,3 +34,8 @@ obj.classical.band() // output: undefined
 
 ```
 
+Note
+-----
+
+NOT support IE, since depending on Proxy object (ES6)
+
