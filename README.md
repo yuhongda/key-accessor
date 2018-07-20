@@ -1,5 +1,5 @@
 # key-accessor
-access a key of object safely
+access a key of object safely [link text](https://www.npmjs.com/package/key-accessor 'https://www.npmjs.com/package/key-accessor') 
 
 Install
 -----
